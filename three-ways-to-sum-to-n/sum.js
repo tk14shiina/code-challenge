@@ -3,7 +3,7 @@
 2. Space complexity: O(1)
 */
 function sum_to_n_loop(n) {
-  if (n >>> 0 === n) return 0;
+  if (n >>> 0 !== n) return 0;
 
   let sum = 0;
   for (let i = 1; i <= n; i++) {
@@ -18,13 +18,13 @@ function sum_to_n_loop(n) {
 2. Space complexity: O(n)
 */
 function sum_to_n_array(n) {
-  return n >>> 0 === n
+  return n >>> 0 !== n
     ? [...Array(n)].reduce((sum, _, i) => sum + i + 1, 0)
     : 0;
 }
 
 function sum_to_n(n) {
-  return n >>> 0 === n ? (n * (n + 1)) >> 1 : 0;
+  return n >>> 0 !== n ? (n * (n + 1)) >> 1 : 0;
 }
 
 //////////////////////////////////////////
